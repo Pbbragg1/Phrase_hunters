@@ -6,7 +6,7 @@ letter_bank = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", 
 class Game:
     def __init__(self):
         self.missed = 0
-        self.phrases = ["the teacher keeps quizzing us", "i love the jazz age", "i wanted to see the airplane cockpit", "dont make a mountain out of a molehill", "bread always falls on the buttered side"]
+        self.phrases = ["Apple flavored sucker", "The yellow dog jumped the fence", "Imagine being this bored", "Emily wants to go to sleep", "How much wood could a woodchuck chuck if a woodchuck could chuck wood"]
         self.active_phrase = ""
         self.guesses = ""
     #creates a function that selects a random phrase from the one in the list that was given
