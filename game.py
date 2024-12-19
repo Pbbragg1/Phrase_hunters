@@ -1,5 +1,8 @@
 import random
 import phrase
+import os
+
+
 #creates a letter bank not just letting the player now what they can choose but the computer know what has been chosen by removing the ones they hav echosen later on
 letter_bank = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 #creates a game class to access to run on the major game things by calling the phrase class in the other file that is working behind the scenes
@@ -16,9 +19,16 @@ class Game:
         return active_phrase
     #defines a function that welcomes the player and explains the rules
     def welcome():
-        print("Hi there, if you've never played hang man before give me a second an i'll explain. If you know how to play you can just go right on past and enjoy playing")
-        print("How to play hang man:\n Im going to start out by selecting a random phrase for you to guess, then you will try and guess letters that go in what looks like a blank phrase.")
-        print("If you guess correctly then you will not loose a life and you will take another guess until all the blanks are filled in, but if you guess wrong you will loose a life and if you run out you will be eliminated.")
+        os.system("clear")
+        input('''                Hi there, if you've never played hang man before give me a second an i'll explain. If you know how to play you can 
+                just go right on past and enjoy playing
+                How to play hang man:
+                Im going to start out by selecting a random phrase for you to guess, then you will try and guess letters that go in 
+                what looks like a blank phrase.
+                If you guess correctly then you will not loose a life and you will take another guess until all the blanks are filled,
+                but if you guess wrong you will loose a life and if you run out you will be eliminated.
+                press enter to continue >> ''')
+        os.system("clear")
     #creates a funtion that as the name suggests, gets a guess from the player
     def get_guess():
         guesses = input("pick any letter from the alphabet besides a previous guess >> ")
@@ -58,6 +68,7 @@ class Game:
                 print(f"unused letters: {", ".join(letter_bank)}")
                 #grabs a guess so it can compare to the answer
                 guesses = Game.get_guess()
+                os.system("clear")
                 #calls the check letter to delete the letter and tell them if its in the phrase or not
                 phrase.Phrase.check_letter(active_phrase, guesses, obj, letter_bank)
                 print("-----------------------------------------")
@@ -67,9 +78,11 @@ class Game:
                 try:
                     if play == "Yes" or play == "yes":
                         play = True
+                        os.system("clear")
                         break
                     if play == "No" or play == "no":
                         play = False
+                        os.system("clear")
                         break
                     else:
                         raise ValueError
